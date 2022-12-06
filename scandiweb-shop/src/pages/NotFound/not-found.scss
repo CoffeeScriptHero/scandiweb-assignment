@@ -1,0 +1,28 @@
+@import "../../sassStyles/mixins";
+@import "../../sassStyles/variables";
+
+.not-found {
+  margin-top: 200px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  &__title {
+    @include textParameters(
+      $size: 22px,
+      $weight: 700,
+      $fontFamily: "Roboto condensed"
+    );
+  }
+  &__text {
+    margin-top: 30px;
+    @include textParameters($size: 16px, $fontFamily: "Source Sans Pro");
+  }
+  &__link {
+    color: $base-color;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

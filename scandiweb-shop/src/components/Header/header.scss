@@ -1,0 +1,79 @@
+@import "../../sassStyles/variables";
+@import "../../sassStyles/mixins";
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: $white-color;
+  width: 100%;
+  z-index: 1000;
+  &__content {
+    width: $container-width;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__content-categories {
+    margin: 32px 0px 28px 0px;
+  }
+  &__content-category {
+    @include textParameters($lineHeight: 19.2px);
+    text-transform: uppercase;
+    &:not(:last-of-type) {
+      margin-right: 32px;
+    }
+  }
+  &__content-category---active {
+    position: relative;
+    @include textParameters(
+      $weight: 600,
+      $lineHeight: 19.2px,
+      $color: $base-color
+    );
+    &:after {
+      content: "";
+      position: absolute;
+      height: 2px;
+      width: calc(100% + 32px);
+      background-color: $base-color;
+      top: 45px;
+      left: -16px;
+      right: 0;
+      margin: auto;
+    }
+  }
+  &__content-logo {
+    margin-top: 7px;
+  }
+  &__content-logo-img {
+    width: 31px;
+    height: 28px;
+    display: block;
+  }
+  &__content-purchases {
+    display: flex;
+    align-items: center;
+  }
+  &__content-purchases-minicart-icon {
+    position: relative;
+    margin-left: 22px;
+  }
+  &__content-purchases-minicart-quantity {
+    width: 20px;
+    height: 20px;
+    background-color: $dark-color;
+    color: $white-color;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    top: -10px;
+    left: 12px;
+    @media (max-width: 1500px) {
+      padding-bottom: 2px;
+    }
+  }
+}

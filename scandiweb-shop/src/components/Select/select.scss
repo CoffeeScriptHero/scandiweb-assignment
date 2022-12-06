@@ -1,0 +1,53 @@
+@import "../../sassStyles/mixins";
+@import "../../sassStyles/variables";
+
+.select {
+  position: relative;
+  min-width: 50px;
+  max-width: 65px;
+  &__btn {
+    padding: 0;
+    outline: none;
+    background-color: $white-color;
+    border: none;
+    cursor: pointer;
+    @include textParameters($size: 18px, $lineHeight: 29px);
+    width: 100%;
+  }
+  &__arrow {
+    content: "";
+    position: relative;
+    margin-left: 5px;
+    border-style: solid;
+    border-width: 0.8px 0.8px 0 0;
+    display: inline-block;
+    height: 5px;
+    width: 5px;
+    &-up {
+      transform: rotate(-45deg);
+    }
+    &-down {
+      transform: rotate(135deg);
+    }
+  }
+  &__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    left: -15px;
+    box-shadow: 0px 4px 35px $select-shadow-color;
+    top: 35px;
+    z-index: 25;
+  }
+  &__list-item {
+    cursor: pointer;
+    background-color: $white-color;
+    padding: 8px 38px 8px 20px;
+    white-space: nowrap;
+    @include textParameters($size: 18px, $lineHeight: 29px);
+    &:hover {
+      background-color: $grey-color;
+    }
+  }
+}

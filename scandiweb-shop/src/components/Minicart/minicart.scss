@@ -1,0 +1,91 @@
+@import "../../sassStyles/variables";
+@import "../../sassStyles/mixins";
+
+.minicart {
+  position: fixed;
+  left: 0;
+  top: 76px;
+  right: 0;
+  bottom: 0;
+  background-color: $minicart-shadow-background;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 20;
+  &__content {
+    width: 325px;
+    position: absolute;
+    top: 0;
+    right: calc((100vw - $container-width - 60px) / 2);
+    min-height: 200px;
+    max-height: 677px;
+    background-color: $white-color;
+    padding-left: 16.5px;
+  }
+  &__content-centered {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__content-items {
+    max-height: 430px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    margin-bottom: 43px;
+  }
+  &__content-empty-text {
+    @include textParameters($fontFamily: "Roboto");
+    margin-top: 65px;
+  }
+  &__content-title {
+    @include textParameters($weight: 700, $lineHeight: 25.6px);
+    margin-bottom: 32px;
+  }
+  &__content-title-number {
+    @include textParameters($weight: 500, $lineHeight: 25.6px);
+  }
+  &__content-buttons {
+    display: flex;
+    margin-bottom: 32px;
+  }
+  &__content-button {
+    @include textParameters($size: 14px, $lineHeight: 16.8px, $weight: 600);
+    width: 140px;
+    height: 43px;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    background-color: $white-color;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+    &.minicart__content-button_dark {
+      border: 1px solid $dark-color;
+      color: $dark-color;
+      margin-right: 12px;
+    }
+    &.minicart__content-button_green {
+      background-color: $base-color;
+      color: $white-color;
+    }
+  }
+  &__total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 32px;
+    padding-right: 16.5px;
+  }
+  &__total-text {
+    @include textParameters(
+      $weight: 500,
+      $fontFamily: "Roboto",
+      $lineHeight: 18px
+    );
+  }
+  &__total-price {
+    @include textParameters($weight: 700, $lineHeight: 26px);
+  }
+}

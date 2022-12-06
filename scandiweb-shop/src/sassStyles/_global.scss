@@ -1,0 +1,118 @@
+@import "./variables";
+@import "./mixins";
+
+// ------ Fonts settings start
+
+@include fontConnect(
+  $family: "Raleway",
+  $weight: 400,
+  $path: "../assets/fonts/Raleway/Raleway-Regular.woff"
+);
+
+@include fontConnect(
+  $family: "Raleway",
+  $weight: 500,
+  $path: "../assets/fonts/Raleway/Raleway-Medium.woff"
+);
+
+@include fontConnect(
+  $family: "Raleway",
+  $weight: 600,
+  $path: "../assets/fonts/Raleway/Raleway-SemiBold.woff"
+);
+
+@include fontConnect(
+  $family: "Raleway",
+  $weight: 700,
+  $path: "../assets/fonts/Raleway/Raleway-Bold.woff"
+);
+
+@include fontConnect(
+  $family: "Roboto",
+  $weight: 400,
+  $path: "../assets/fonts/Roboto/Roboto-Regular.woff"
+);
+
+@include fontConnect(
+  $family: "Roboto",
+  $weight: 500,
+  $path: "../assets/fonts/Roboto/Roboto-Medium.woff"
+);
+
+@include fontConnect(
+  $family: "Roboto Condensed",
+  $weight: 400,
+  $path: "../assets/fonts/Roboto Condensed/RobotoCondensed-Regular.woff"
+);
+
+@include fontConnect(
+  $family: "Roboto Condensed",
+  $weight: 700,
+  $path: "../assets/fonts/Roboto Condensed/RobotoCondensed-Bold.woff"
+);
+
+@include fontConnect(
+  $family: "Source Sans Pro",
+  $weight: 400,
+  $path: "../assets/fonts/Source Sans Pro/SourceSansPro-Regular.woff"
+);
+
+// ------ Fonts settings end
+
+// ------ CSS Global styles start
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Raleway", sans-serif;
+  box-sizing: border-box;
+  overflow-y: scroll;
+}
+
+a {
+  text-decoration: none;
+}
+
+.purchase-button {
+  outline: none;
+  border: none;
+  cursor: pointer;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @include textParameters(
+    $lineHeight: 19.2px,
+    $weight: 600,
+    $color: $white-color
+  );
+  text-transform: uppercase;
+  background-color: $base-color;
+  margin-top: 39px;
+  margin-bottom: 56px;
+}
+.img--opacity-grey {
+  opacity: 43%;
+}
+.img-out-of-stock-text {
+  &:after {
+    content: "OUT OF STOCK";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    @include textParameters(
+      $size: 24px,
+      $lineHeight: 38.4px,
+      $color: $out-of-stock-color
+    );
+  }
+}
+.text--color-grey {
+  color: $out-of-stock-color;
+}
+// ------ CSS Global styles start

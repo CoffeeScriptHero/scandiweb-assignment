@@ -1,0 +1,119 @@
+@import "../../sassStyles/mixins";
+@import "../../sassStyles/variables";
+
+.cart-item {
+  max-height: 800px;
+  display: flex;
+  &:not(:last-of-type) {
+    margin-bottom: 40px;
+  }
+  &__info {
+    width: 135px;
+  }
+  &__info-brand,
+  &__info-name {
+    @include textParameters($weight: 300, $lineHeight: 25.6px);
+  }
+  &__info-name {
+    display: inline-block;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+  &__info-price {
+    display: block;
+    margin-top: 5px;
+    margin-bottom: 7px;
+    @include textParameters($weight: 500, $lineHeight: 26px);
+  }
+  &__quantity-adjustment {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 6px;
+    margin-right: 8px;
+    min-height: 190px;
+  }
+  &__quantity-adjustment-button {
+    @include textParameters($size: 16px, $weight: 500);
+    width: $quantity-button-size-small;
+    height: $quantity-button-size-small;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    outline: none;
+    background-color: $white-color;
+    border: 1px solid $dark-color;
+    padding: 0;
+    cursor: pointer;
+  }
+  &__quantity-adjustment-number {
+    @include textParameters($weight: 500, $lineHeight: 26px);
+  }
+  &__image-wrapper {
+    @include minMaxWidthHeight($maxWidth: 121px, $maxHeight: 190px);
+    position: relative;
+  }
+  &__image {
+    max-width: 100%;
+    max-height: 100%;
+    cursor: pointer;
+  }
+  &.cart-item__size--big {
+    padding: 30px 0;
+    margin-bottom: 0;
+    border-bottom: 1px solid $grey-cart-border-color;
+    &:not(:nth-child(2)) {
+      border-top: 1px solid $grey-cart-border-color;
+    }
+    .cart-item__info {
+      width: 100%;
+      &-brand {
+        @include textParameters($size: 30px, $weight: 600, $lineHeight: 27px);
+      }
+      &-name {
+        @include textParameters($size: 30px, $lineHeight: 27px);
+        margin-top: 16px;
+      }
+      &-price {
+        @include textParameters($size: 24px, $weight: 700, $lineHeight: 24px);
+        margin: 20px 0;
+      }
+    }
+    .cart-item__quantity-adjustment {
+      margin-right: 24px;
+      &-button {
+        width: $quantity-button-size-big;
+        height: $quantity-button-size-big;
+      }
+      &-number {
+        @include textParameters($size: 24px, $weight: 500, $lineHeight: 38px);
+      }
+    }
+    .cart-item__image-wrapper {
+      @include minMaxWidthHeight($maxWidth: 200px, $maxHeight: 288px);
+    }
+  }
+}
+.cart-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: $cart-image-switcher-button-size;
+  height: $cart-image-switcher-button-size;
+  position: absolute;
+  outline: none;
+  border: none;
+  background: $cart-button-background;
+  cursor: pointer;
+  bottom: 16px;
+  &-left {
+    right: 48px;
+    padding-left: 1px;
+  }
+  &-right {
+    right: 16px;
+    padding-right: 1px;
+  }
+}

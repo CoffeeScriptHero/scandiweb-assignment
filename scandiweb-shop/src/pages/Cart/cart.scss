@@ -1,0 +1,71 @@
+@import "../../sassStyles/mixins";
+@import "../../sassStyles/variables";
+
+.cart {
+  margin-top: 169px;
+  margin-bottom: 180px;
+  &__empty {
+    height: $cart-additional-wrapper-height;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    &-title {
+      @include textParameters($size: 24px, $weight: 600);
+      margin-top: 40px;
+      margin-bottom: 20px;
+    }
+    &-text {
+      @include textParameters($size: 14px, $color: $empty-cart-text-color);
+    }
+  }
+  &__order-done {
+    height: $cart-additional-wrapper-height;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    &-title {
+      @include textParameters($size: 26px, $weight: 600);
+    }
+    &-text {
+      @include textParameters($size: 20px);
+      margin-top: 30px;
+      margin-bottom: 10px;
+      &-trolling {
+        @include textParameters($color: $empty-cart-text-color);
+      }
+    }
+    &-button {
+      text-transform: none;
+      padding: 12px 60px;
+    }
+  }
+  &__title {
+    @include textParameters($size: 32px, $weight: 700, $lineHeight: 40px);
+    text-transform: uppercase;
+    margin-bottom: 55px;
+  }
+  &__order-info {
+    display: flex;
+    align-items: center;
+    margin-top: 32px;
+    &-wrapper {
+      display: flex;
+      flex-direction: column;
+      &:nth-child(2) {
+        margin-left: 8px;
+      }
+    }
+    &-text {
+      @include textParameters($size: 24px, $lineHeight: 28px, $weight: 500);
+    }
+    &-value {
+      @include textParameters($size: 24px, $lineHeight: 24px, $weight: 700);
+    }
+  }
+  &__purchase-button {
+    padding: 12px 112.5px;
+    margin: 16px 0 0 0;
+  }
+}

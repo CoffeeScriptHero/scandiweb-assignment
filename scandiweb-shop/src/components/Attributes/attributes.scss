@@ -1,0 +1,109 @@
+@import "../../sassStyles/variables";
+@import "../../sassStyles/mixins";
+
+.attribute {
+  &.attribute__size-small {
+    &:not(:nth-last-of-type(1)) {
+      margin-bottom: 8px;
+    }
+  }
+  &.attribute__size-big {
+    &:not(:nth-last-of-type(1)) {
+      margin-bottom: 24px;
+    }
+    padding-left: 2px;
+  }
+  &__title {
+    margin-bottom: 8px;
+    display: inline-block;
+    &.attribute__size-small {
+      @include textParameters($size: 14px, $lineHeight: 16px);
+    }
+    &.attribute__size-big {
+      @include textParameters(
+        $size: 18px,
+        $lineHeight: 18px,
+        $fontFamily: "Roboto Condensed"
+      );
+      text-transform: uppercase;
+    }
+  }
+  &__content {
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+  }
+  &__item {
+    cursor: pointer;
+  }
+  &__item_type_text {
+    background-color: $white-color;
+    border: 1px solid $dark-color;
+    &.attribute__size-small {
+      @include textParameters(
+        $size: 12px,
+        $lineHeight: 22px,
+        $fontFamily: "Source Sans Pro",
+        $color: $text-attribute-color
+      );
+      &:not(:nth-last-of-type(1)) {
+        margin-right: 8px;
+      }
+      min-width: 25px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    &.attribute__size-big {
+      @include textParameters(
+        $lineHeight: 18px,
+        $fontFamily: "Source Sans Pro",
+        $color: $text-attribute-color
+      );
+      width: 63px;
+      height: 45px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-transform: uppercase;
+      &:not(:nth-last-of-type(1)) {
+        margin-right: 12px;
+      }
+    }
+    &.attribute__size-bigger {
+      min-width: 40px;
+    }
+    &.attribute__state-active {
+      background-color: $dark-color;
+      color: $white-color;
+    }
+  }
+  &__item_type_swatch {
+    &:not(:nth-last-of-type(1)) {
+      margin-right: 8px;
+    }
+    &.attribute__size-small {
+      width: 16px;
+      height: 16px;
+    }
+    &.attribute__size-big {
+      width: 32px;
+      height: 32px;
+    }
+    &.attribute--color-white {
+      outline: 1px solid grey;
+      &.attribute__size-small {
+        width: 14px;
+        height: 14px;
+      }
+      &.attribute__size-big {
+        width: 31px;
+        height: 31px;
+      }
+    }
+    &.attribute__state-active {
+      outline-offset: 1px;
+      outline: 1px solid $base-color;
+    }
+  }
+}
